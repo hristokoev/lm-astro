@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/inter/";
 interface Props {
 	title: string;
 }
@@ -16,36 +17,76 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="font-inter flex flex-col min-h-screen overflow-hidden">
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	@font-face {
+		font-family: "HK Grotesk";
+		font-weight: 700;
+		font-style: normal;
+		font-display: fallback;
+		src:
+			url("/fonts/HKGrotesk-Bold.woff2") format("woff2"),
+			url("/fonts/HKGrotesk-Bold.woff") format("woff");
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+
+	@font-face {
+		font-family: "HK Grotesk";
+		font-weight: 800;
+		font-style: normal;
+		font-display: fallback;
+		src:
+			url("/fonts/HKGrotesk-ExtraBold.woff2") format("woff2"),
+			url("/fonts/HKGrotesk-ExtraBold.woff") format("woff");
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	@font-face {
+		font-family: "HK Grotesk";
+		font-weight: 500;
+		font-style: normal;
+		font-display: fallback;
+		src:
+			url("/fonts/HKGrotesk-Medium.woff2") format("woff2"),
+			url("/fonts/HKGrotesk-Medium.woff") format("woff");
+	}
+	/* Typography */
+	.h1 {
+		@apply text-6xl font-extrabold;
+	}
+
+	.h2 {
+		@apply text-5xl font-extrabold;
+	}
+
+	.h3 {
+		@apply text-4xl font-extrabold;
+	}
+
+	.h4 {
+		@apply text-3xl font-extrabold;
+	}
+
+	@screen md {
+		.h1 {
+			@apply text-7xl;
+		}
+
+		.h2 {
+			@apply text-6xl;
+		}
+	}
+	.btn,
+	.btn-sm {
+		@apply font-medium inline-flex items-center justify-center border border-transparent rounded-full leading-snug transition duration-150 ease-in-out;
+	}
+
+	.btn {
+		@apply px-6 py-3;
+	}
+
+	.btn-sm {
+		@apply px-4 py-2;
 	}
 </style>
