@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Candy from '../../public/images/candy.png';
 import HeroRight from '../../public/images/hero-right.png';
+import Step from './form/Step';
 ---
 <section class="relative bg-aquamarine-300">
 	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
@@ -14,6 +15,7 @@ import HeroRight from '../../public/images/hero-right.png';
 					Lollipop Movers
 				</h1>
 				<div class="min-h-[420px] pb-24">
+					<Step client:load />
 				</div>
 			</div>
 		</div>
