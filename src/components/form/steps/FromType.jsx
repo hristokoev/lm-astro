@@ -1,9 +1,15 @@
-import { useState } from "react"
 import Layout from "../Layout";
+import { useState } from "react"
+import { formData, formDataAdd } from "../store";
 
 export default function FromType({ index }) {
 
-	const [fromType, setFromType] = useState("Flat");
+	const [fromType, setFromType] = useState(formData.value.fromType || "")
+
+	const handleChange = (e) => {
+		setFromType(e.target.value)
+		formDataAdd(e.target.name, e.target.value)
+	}
 
 	return (
 		<Layout index={index}>
@@ -19,7 +25,7 @@ export default function FromType({ index }) {
 						name="fromType"
 						value="Flat"
 						className="hidden"
-						onClick={() => setFromType("Flat")}
+						onClick={handleChange}
 					/>
 				</div>
 				<div className={`border rounded-3xl ${fromType == "House" ? "bg-white" : "hover:bg-white/30"} border-slate-800`}>
@@ -30,7 +36,7 @@ export default function FromType({ index }) {
 						name="fromType"
 						value="House"
 						className="hidden"
-						onClick={() => setFromType("House")}
+						onClick={handleChange}
 					/>
 				</div>
 			</div>

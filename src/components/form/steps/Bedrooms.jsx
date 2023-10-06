@@ -1,9 +1,15 @@
-import { useState } from "react";
 import Layout from "../Layout";
+import { useState } from "react";
+import { formData, formDataAdd } from "../store";
 
 export default function Bedrooms({ index }) {
 
-	const [rooms, setRooms] = useState("1 Bedroom");
+	const [rooms, setRooms] = useState(formData.value.rooms || "")
+
+	const handleChange = (e) => {
+		setRooms(e.target.value)
+		formDataAdd(e.target.name, e.target.value)
+	}
 
 	return (
 		<Layout index={index}>
@@ -16,10 +22,10 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form1Bedroom"
 						type="radio"
-						name="formRooms"
+						name="rooms"
 						value="1 Bedroom"
 						className="hidden"
-						onClick={() => setRooms("1 Bedroom")}
+						onClick={handleChange}
 					/>
 				</div>
 				<div className={`border rounded-3xl ${rooms == "2 Bedrooms" ? "bg-white" : "hover:bg-white/30"} border-slate-800`}>
@@ -27,10 +33,10 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form2Bedrooms"
 						type="radio"
-						name="formRooms"
+						name="rooms"
 						value="2 Bedrooms"
 						className="hidden"
-						onClick={() => setRooms("2 Bedrooms")}
+						onClick={handleChange}
 					/>
 				</div>
 				<div className={`border rounded-3xl ${rooms == "3 Bedrooms" ? "bg-white" : "hover:bg-white/30"} border-slate-800`}>
@@ -38,7 +44,7 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form3Bedrooms"
 						type="radio"
-						name="formRooms"
+						name="rooms"
 						value="3 Bedrooms"
 						className="hidden"
 						onClick={() => setRooms("3 Bedrooms")}
@@ -49,10 +55,10 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form4Bedrooms"
 						type="radio"
-						name="formRooms"
+						name="rooms"
 						value="4 Bedrooms"
 						className="hidden"
-						onClick={() => setRooms("4 Bedrooms")}
+						onClick={handleChange}
 					/>
 				</div>
 				<div className={`border rounded-3xl ${rooms == "5+ Bedrooms" ? "bg-white" : "hover:bg-white/30"} border-slate-800`}>
@@ -60,10 +66,10 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form5Bedrooms"
 						type="radio"
-						name="formRooms"
+						name="rooms"
 						value="5+ Bedrooms"
 						className="hidden"
-						onClick={() => setRooms("5+ Bedrooms")}
+						onClick={handleChange}
 					/>
 				</div>
 				<div className={`border rounded-3xl ${rooms == "Office" ? "bg-malibu-300" : "hover:bg-malibu-300/30"} border-slate-800`}>
@@ -71,10 +77,10 @@ export default function Bedrooms({ index }) {
 					<input
 						id="formOffice"
 						type="radio"
-						name="formRooms"
+						name="rooms"
 						value="Office"
 						className="hidden"
-						onClick={() => setRooms("Office")}
+						onClick={handleChange}
 					/>
 				</div>
 			</div>

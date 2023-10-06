@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { add, eachDayOfInterval, startOfWeek, endOfWeek, format, getDay, isEqual, isToday, parse, startOfToday } from 'date-fns'
+import { formData, formDataAdd } from "../store";
 import FormButtons from "../FormButtons";
 
 function classNames(...classes) {
@@ -30,6 +31,10 @@ export default function When({ index }) {
 		if (maxDate > firstDayCurrentWeek)
 			setCurrentWeek(format(firstDayNextWeek, 'dd-MMM-yyyy'))
 	}
+
+	useEffect(() => {
+		formDataAdd('when', format(selectedDay, 'MMM dd, yyyy'))
+	}, [selectedDay])
 
 	return (
 		<div className="flex flex-col justify-between items-center gap-8 h-[320px]">
@@ -67,7 +72,12 @@ export default function When({ index }) {
 						>
 							<button
 								type="button"
-								onClick={() => day > today && setSelectedDay(day)}
+								onClick={() => {
+									if (day > today) {
+										setSelectedDay(day)
+										formDataAdd('when', format(day, 'MMM dd, yyyy'))
+									}
+								}}
 								className={classNames(
 									!isEqual(day, selectedDay) &&
 									!isToday(day) &&
@@ -99,10 +109,7 @@ export default function When({ index }) {
 					))}
 				</div>
 			</div>
-			<form>
-				<input type="text" name="when" value={format(selectedDay, 'MMM dd, yyy')} className="hidden" />
-				<FormButtons index={index} />
-			</form>
+			<FormButtons index={index} />
 		</div>
 	)
 }

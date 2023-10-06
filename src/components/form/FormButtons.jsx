@@ -11,7 +11,7 @@ export default function FormButtons({ index }) {
 				</div>
 			)}
 			<div>
-				<button className="btn text-white bg-slate-700 hover:bg-slate-600 border-slate-600 w-full" type="submit" onClick={() => formNext(index)}>
+				<button className="btn text-white bg-slate-700 hover:bg-slate-600 border-slate-600 w-full" type="button" onClick={() => formNext(index)}>
 					Continue to next step&nbsp;
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 						<path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />

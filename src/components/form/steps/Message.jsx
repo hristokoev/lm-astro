@@ -1,6 +1,12 @@
 import Layout from "../Layout";
+import { formData, formDataAdd } from "../store";
 
 export default function Message({ index }) {
+
+	const handleChange = (e) => {
+		formDataAdd(e.target.name, e.target.value)
+	}
+
 	return (
 		<Layout index={index}>
 			<p className="text-xl text-slate-700 font-semibold">Anything you wish to add or share?</p>
@@ -10,6 +16,8 @@ export default function Message({ index }) {
 					name="message"
 					className="form-textarea p-3 sm:min-w-[420px] text-xl rounded-xl"
 					placeholder="Share your idea here..."
+					defaultValue={formData.value.message || ""}
+					onChange={(e) => formDataAdd(e.target.name, e.target.value)}
 				/>
 			</div>
 			
