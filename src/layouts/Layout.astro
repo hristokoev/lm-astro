@@ -1,5 +1,5 @@
 ---
-import "@fontsource-variable/inter/";
+import "@fontsource-variable/montserrat/";
 interface Props {
 	title: string;
 }
@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="font-inter flex flex-col min-h-screen overflow-hidden">
+	<body class="flex flex-col min-h-screen overflow-hidden">
 		<slot />
 	</body>
 </html>
@@ -52,6 +52,9 @@ const { title } = Astro.props;
 			url("/fonts/HKGrotesk-Medium.woff") format("woff");
 	}
 	/* Typography */
+	body {
+		font-family: 'Montserrat Variable', sans-serif;
+	}
 	.h1 {
 		@apply text-6xl font-extrabold;
 	}
@@ -103,36 +106,23 @@ const { title } = Astro.props;
 	.form-select,
 	.form-checkbox,
 	.form-radio {
-		@apply bg-white border-2 border-aquamarine-500 focus:border-aquamarine-500;
+		@apply bg-white border-2 border-aquamarine-500 focus:border-aquamarine-500 !important;
 	}
 
 	.form-input,
-	.form-textarea,
 	.form-multiselect,
 	.form-select,
 	.form-checkbox {
-		@apply rounded-full;
-	}
-
-	.form-input,
-	.form-textarea,
-	.form-multiselect,
-	.form-select {
-		@apply py-3 px-4;
+		@apply rounded-3xl !important;
 	}
 
 	.form-input,
 	.form-textarea {
-		@apply placeholder-slate-500 leading-snug;
+		@apply placeholder-slate-500 leading-snug !important;
 	}
 
 	.form-select {
-		@apply pr-10;
-	}
-
-	.form-checkbox,
-	.form-radio {
-		@apply text-pink-600 rounded-sm;
+		@apply pr-10 !important;
 	}
 
 	.form-input:focus,
@@ -141,6 +131,10 @@ const { title } = Astro.props;
 	.form-select:focus,
 	.form-checkbox:focus,
 	.form-radio:focus {
-		@apply outline-none placeholder-slate-300;
+		@apply outline-none ring-0 placeholder-slate-300 !important;
+	}
+
+	.form-checkbox:checked {
+		@apply bg-malibu-500 border-transparent !important;
 	}
 </style>

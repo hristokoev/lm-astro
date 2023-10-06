@@ -12,35 +12,31 @@ import FirstName from "./steps/FirstName"
 import LastName from "./steps/LastName"
 import PhoneNumber from "./steps/Phone"
 import Email from "./steps/Email"
-import { formIndex, formPrev, formNext } from "./store"
+import { formIndex } from "./store"
 import { useStore } from "@nanostores/react"
 
 function Step() {
 
 	const index = useStore(formIndex)
 
-	const StepDisplay = [		
-		<FromCity />,
-		<Bedrooms />,
-		<FromType />,
-		<FromFloors />,
-		<ToCity />,
-		<ToType />,
-		<ToFloors />,
-		<When />,
-		<Message />,
-		<FirstName />,
-		<LastName />,
-		<PhoneNumber />,
-		<Email />,
-		<Success />
+	const StepDisplay = [
+		<FromCity index={0} />,
+		<Bedrooms index={1} />,
+		<FromType index={2} />,
+		<FromFloors index={3} />,
+		<ToCity index={4} />,
+		<ToType index={5} />,
+		<ToFloors index={6} />,
+		<When index={7} />,
+		<Message index={8} />,
+		<FirstName index={9} />,
+		<LastName index={10} />,
+		<PhoneNumber index={11} />,
+		<Email index={12} />,
+		<Success index={13} />
 	]
 	return (
-		<div>
-			{StepDisplay[index]}
-			<button onClick={() => formPrev(index)}>Prev</button>
-			<button onClick={() => formNext(index)}>Next</button>
-		</div>
+		StepDisplay[index]
 	)
 }
 

@@ -45,7 +45,7 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
 				hkgrotesk: ['HK Grotesk', 'sans-serif'],
 			},
 			fontSize: {
@@ -71,5 +71,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/forms")],
 }
