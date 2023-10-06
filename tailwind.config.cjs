@@ -16,7 +16,7 @@ module.exports = {
 					'800': '#006f56',
 					'900': '#005b49',
 					'950': '#00342a',
-				    },
+				},
 				'hot-pink': {
 					'50': '#fef1f8',
 					'100': '#fee5f2',
@@ -71,5 +71,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("@tailwindcss/forms")],
+	plugins: [],
 }

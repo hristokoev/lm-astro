@@ -1,7 +1,6 @@
 import FromCity from "./steps/FromCity"
 import Bedrooms from "./steps/Bedrooms"
 import FromType from "./steps/FromType"
-import Success from "./steps/Success"
 import FromFloors from "./steps/FromFloors"
 import ToCity from "./steps/ToCity"
 import ToType from "./steps/ToType"
@@ -12,7 +11,9 @@ import FirstName from "./steps/FirstName"
 import LastName from "./steps/LastName"
 import PhoneNumber from "./steps/Phone"
 import Email from "./steps/Email"
-import { formIndex } from "./store"
+import Success from "./steps/Success"
+import Error from "./steps/Error"
+import { formIndex, formData } from "./store"
 import { useStore } from "@nanostores/react"
 
 function Step() {
@@ -33,7 +34,8 @@ function Step() {
 		<LastName index={10} />,
 		<PhoneNumber index={11} />,
 		<Email index={12} />,
-		<Success index={13} />
+		<Success index={13} />,
+		<Error index={14} />
 	]
 	return (
 		StepDisplay[index]

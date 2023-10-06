@@ -24,6 +24,10 @@ export function formDataAdd(key, value) {
 	formData.set({ ...formData.get(), [key]: value })
 }
 
+export function formJump(index) {
+	formIndex.set(index)
+}
+
 export function formPrev(index) {
 	formIndex.set(index == 0 ? 0 : index - 1)
 }

@@ -1,26 +1,36 @@
-import Layout from "../Layout";
-import { formData, formDataAdd } from "../store";
+import { useForm } from "react-hook-form";
+import { formData, formDataAdd, formNext } from "../store";
+import FormButtons from "../FormButtons";
 
 export default function Message({ index }) {
 
-	const handleChange = (e) => {
-		formDataAdd(e.target.name, e.target.value)
+	const { register, handleSubmit, formState: { errors } } = useForm(
+		{ defaultValues: { message: formData.value.message || "" } }
+	);
+
+	const onSubmit = (data) => {
+		formDataAdd("message", data.message)
+		formNext(index)
 	}
 
 	return (
-		<Layout index={index}>
+		<form className="flex flex-col md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
 			<p className="text-xl text-slate-700 font-semibold">Anything you wish to add or share?</p>
 			<div className="flex flex-col items-start mb-2 select-none">
 				<textarea					
 					rows="4"
-					name="message"
-					className="form-textarea p-3 sm:min-w-[420px] text-xl rounded-xl"
+					{...register("message", {
+						minLength: {
+							value: 10,
+							message: "Please enter a valid message"
+						},
+					})
+					}
+					className={`form-textarea p-3 sm:min-w-[420px] text-xl rounded-xl ${errors.message && "border-hot-pink-500 focus:border-hot-pink-500"}`}
 					placeholder="Share your idea here..."
-					defaultValue={formData.value.message || ""}
-					onChange={(e) => formDataAdd(e.target.name, e.target.value)}
 				/>
 			</div>
-			
-		</Layout>
+			<FormButtons index={index} />
+		</form>
 	)
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { add, eachDayOfInterval, startOfWeek, endOfWeek, format, getDay, isEqual, isToday, parse, startOfToday } from 'date-fns'
-import { formData, formDataAdd } from "../store";
+import { formData, formDataAdd, formNext } from "../store";
 import FormButtons from "../FormButtons";
 
 function classNames(...classes) {
@@ -32,12 +32,17 @@ export default function When({ index }) {
 			setCurrentWeek(format(firstDayNextWeek, 'dd-MMM-yyyy'))
 	}
 
+	const onSubmit = (e) => {
+		e.preventDefault()
+		formNext(index)
+	}
+
 	useEffect(() => {
 		formDataAdd('when', format(selectedDay, 'MMM dd, yyyy'))
 	}, [selectedDay])
 
 	return (
-		<div className="flex flex-col justify-between items-center gap-8 h-[320px]">
+		<div className="flex flex-col md:justify-between items-center gap-8 min-h-[320px]">
 			<p className="text-xl text-slate-700 font-semibold">When would you like to move?</p>
 			<div className="mx-auto md:max-w-4xl z-10 select-none">
 				<div className="flex items-center">
@@ -109,7 +114,9 @@ export default function When({ index }) {
 					))}
 				</div>
 			</div>
-			<FormButtons index={index} />
+			<form onSubmit={onSubmit}>
+				<FormButtons index={index} />
+			</form>
 		</div>
 	)
 }

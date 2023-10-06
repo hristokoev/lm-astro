@@ -106,23 +106,23 @@ const { title } = Astro.props;
 	.form-select,
 	.form-checkbox,
 	.form-radio {
-		@apply bg-white border-2 border-aquamarine-500 focus:border-aquamarine-500 !important;
+		@apply bg-white border-[2px] border-aquamarine-500 focus:border-aquamarine-500;
 	}
 
 	.form-input,
 	.form-multiselect,
 	.form-select,
 	.form-checkbox {
-		@apply rounded-3xl !important;
+		@apply rounded-3xl;
 	}
 
 	.form-input,
 	.form-textarea {
-		@apply placeholder-slate-500 leading-snug !important;
+		@apply placeholder-slate-500 leading-snug;
 	}
 
 	.form-select {
-		@apply pr-10 !important;
+		@apply pr-10;
 	}
 
 	.form-input:focus,
@@ -131,10 +131,10 @@ const { title } = Astro.props;
 	.form-select:focus,
 	.form-checkbox:focus,
 	.form-radio:focus {
-		@apply outline-none ring-0 placeholder-slate-300 !important;
+		@apply outline-none ring-0 placeholder-slate-300;
 	}
 
 	.form-checkbox:checked {
-		@apply bg-malibu-500 border-transparent !important;
+		@apply accent-malibu-500;
 	}
 </style>

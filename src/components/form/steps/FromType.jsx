@@ -1,20 +1,29 @@
-import Layout from "../Layout";
+import { useForm } from "react-hook-form";
 import { useState } from "react"
-import { formData, formDataAdd } from "../store";
+import { formData, formDataAdd, formNext, formJump } from "../store";
+import FormButtons from "../FormButtons";
 
 export default function FromType({ index }) {
 
 	const [fromType, setFromType] = useState(formData.value.fromType || "")
 
+	const { register, handleSubmit, formState: { errors } } = useForm(
+		{ defaultValues: { fromType: formData.value.fromType || "" } }
+	);
+
+	const onSubmit = (data) => {
+		formDataAdd("fromType", data.fromType)
+		formNext(index)
+	}
+
 	const handleChange = (e) => {
 		setFromType(e.target.value)
-		formDataAdd(e.target.name, e.target.value)
 	}
 
 	return (
-		<Layout index={index}>
+		<form className="flex flex-col md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
 			<p className="text-xl text-slate-700 font-semibold">
-				What's the type of your current property in <span className="font-bold"></span>?
+				What's the type of your current property in <span className="font-bold underline cursor-pointer" onClick={() => formJump(0)}>{formData.value.fromCity}</span>?
 			</p>
 			<div className="px-4 min-w-[360px] grid sm:grid-cols-2 sm:gap-x-4 sm:gap-y-6 gap-4 select-none">
 				<div className={`border rounded-3xl ${fromType == "Flat" ? "bg-white" : "hover:bg-white/30"} border-slate-800`}>
@@ -22,7 +31,7 @@ export default function FromType({ index }) {
 					<input
 						id="fromTypeFlat"
 						type="radio"
-						name="fromType"
+						{...register("fromType", { required: "Please select a type of property" })}
 						value="Flat"
 						className="hidden"
 						onClick={handleChange}
@@ -33,14 +42,14 @@ export default function FromType({ index }) {
 					<input
 						id="fromTypeHouse"
 						type="radio"
-						name="fromType"
+						{...register("fromType", { required: "Please select a type of property" })}
 						value="House"
 						className="hidden"
 						onClick={handleChange}
 					/>
 				</div>
 			</div>
-			
-		</Layout>
+			<FormButtons index={index} />
+		</form>
 	)
 }
