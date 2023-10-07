@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import TestimonialsImage04 from '/src/images/testimonial-04.png';
+---
+<section>
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="max-w-3xl mx-auto">
+			<div class="text-center">
+				<div class="relative inline-flex mb-4">
+					<Image class="rounded-full inline-flex select-none" src={TestimonialsImage04} width="64" height="64" alt="Testimonial 04" />
+					<svg class="absolute top-0 left-full -ml-2 fill-aquamarine-500" width="20" height="18" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 18h6.196L9.448 0H3.252L0 18Zm10.552 0h6.196L20 0h-6.196l-3.252 18Z" />
+					</svg>
+				</div>
+				<div class="text-xl text-slate-500 italic mb-3">
+					"Shifted my household and goods from  Amstelveen to Den Hague using Lollipop movers. They did a great job by their smooth and safe packing, moving and unpacking services at cheaper rates. Highly professional and experienced team. If anyone need packing and moving services in Netherlands I would highly recommend Lollipop movers."
+				</div>
+				<div class="text-slate-500 font-medium">
+					<a class="text-slate-400">Vandana Mittal</a> -{' '}
+					<span class="text-aquamarine-400">
+						5/5
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

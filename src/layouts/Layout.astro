@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col min-h-screen overflow-hidden">
+	<body class="flex flex-col min-h-screen">
 		<slot />
 	</body>
 </html>
@@ -136,5 +136,9 @@ const { title } = Astro.props;
 
 	.form-checkbox:checked {
 		@apply accent-malibu-500;
+	}
+	/* Misc */
+	::selection {
+		@apply bg-aquamarine-500 text-white;
 	}
 </style>

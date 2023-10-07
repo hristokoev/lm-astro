@@ -20,6 +20,7 @@ export default function Phone({ index }) {
 			<input
 				type="text"
 				{...register("phoneNumber", {
+					required: "Please enter your phone number",
 					pattern: {
 						value: /^[0-9-+]+$/,
 						message: "Please enter a valid phone number"
