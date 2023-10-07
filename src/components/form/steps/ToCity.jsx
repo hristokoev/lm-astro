@@ -14,24 +14,25 @@ export default function ToCity({ index }) {
 	}
 
 	return (
-		<form className="flex flex-col md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
+		<form className="flex flex-col justify-center md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
 			<p className="text-xl text-slate-700 font-semibold">
 				Where would you like to move to?
 			</p>
 			<div className="relative select-none">
 				<input
 					type="text"
-					{...register("toCity", { 
-						required: "Please enter a city name",
+					{...register("toCity", {
+						required: "Please enter the address you'll be moving to.",
 						minLength: {
 							value: 4,
-							message: "Please enter a valid city name"
+							message: "Please enter a valid city address."
 						},
-					 })}
-					className={`form-input md:p-6 md:min-w-[360px] text-center text-xl ${errors.toCity && "border-hot-pink-500 focus:border-hot-pink-500"}`}
-					placeholder="Enter a city name"
+					})}
+					className={`form-input p-6 md:min-w-[360px] text-center text-xl ${errors.toCity ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
+					placeholder="City and/or address"
 					autoComplete="off"
 				/>
+				{errors.toCity && <p className="text-sm text-hot-pink-500">{errors.toCity.message}</p>}
 			</div>
 			<FormButtons index={index} />
 		</form>

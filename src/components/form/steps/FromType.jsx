@@ -21,7 +21,7 @@ export default function FromType({ index }) {
 	}
 
 	return (
-		<form className="flex flex-col md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
+		<form className="flex flex-col justify-center md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
 			<p className="text-xl text-slate-700 font-semibold">
 				What's the type of your current property in <span className="font-bold underline cursor-pointer" onClick={() => formJump(0)}>{formData.value.fromCity}</span>?
 			</p>

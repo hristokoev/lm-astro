@@ -29,22 +29,23 @@ export default function Email({ index }) {
 	}
 
 	return (
-		<form className="flex flex-col md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
+		<form className="flex flex-col justify-center md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
 		<p className="text-xl text-slate-700 font-semibold">Lastly, what's your email address?</p>
-		<div className="relative flex sekect-none">
+		<div className="relative sekect-none">
 			<input
 				type="text"
 				{...register("email", {
-					required: "Please enter your email address",
+					required: "Please enter your email address.",
 					pattern: {
 						value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-						message: "Please enter a valid email address"
+						message: "Please enter a valid email address."
 					},
 				})}
-				className={`form-input md:p-6 md:min-w-[360px] text-center text-xl ${errors.email && "border-hot-pink-500 focus:border-hot-pink-500"}`}
+				className={`form-input p-6 md:min-w-[360px] text-center text-xl ${errors.email ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
 				placeholder="jimhalpert@gmail.com"
 				autoComplete="off"
 			/>
+			{errors.email && <p className="text-sm text-hot-pink-500">{errors.email.message}</p>}
 		</div>
 		<FormButtons index={index} loading={loading} />
 	</form>

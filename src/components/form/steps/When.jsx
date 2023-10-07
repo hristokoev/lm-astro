@@ -42,32 +42,34 @@ export default function When({ index }) {
 	}, [selectedDay])
 
 	return (
-		<div className="flex flex-col md:justify-between items-center gap-8 min-h-[320px]">
+		<div className="flex flex-col justify-center md:justify-between items-center gap-8 min-h-[320px]">
 			<p className="text-xl text-slate-700 font-semibold">When would you like to move?</p>
 			<div className="mx-auto md:max-w-4xl z-10 select-none">
-				<div className="flex items-center">
-					<h2 className="flex-auto font-semibold text-gray-900">
+				<div className="flex justify-between px-3">
+					<h2 className="font-semibold text-gray-900">
 						{format(firstDayCurrentWeek, 'MMMM yyyy')}
 					</h2>
-					<button
-						type="button"
-						onClick={previousMonth}
-						className={`-my-1.5 flex flex-none items-center justify-center p-1.5 ${minDate < firstDayCurrentWeek ? "text-plantation-500" : "text-plantation-900"} ${minDate < firstDayCurrentWeek && "hover:text-plantation-400"}`}
-					>
-						<span className="sr-only">Previous month</span>
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-							<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-						</svg>
-					</button>
-					<button
-						onClick={nextMonth}
-						type="button"
-						className={`-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 ${maxDate > firstDayCurrentWeek ? "text-plantation-500" : "text-plantation-900"} ${maxDate > firstDayCurrentWeek && "hover:text-plantation-400"}`}>
-						<span className="sr-only">Next month</span>
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-							<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-						</svg>
-					</button>
+					<div className="flex">
+						<button
+							type="button"
+							onClick={previousMonth}
+							className={`-my-1.5 flex flex-none items-center justify-center p-1.5 ${minDate < firstDayCurrentWeek ? "text-plantation-500" : "text-plantation-900"} ${minDate < firstDayCurrentWeek && "hover:text-plantation-400"}`}
+						>
+							<span className="sr-only">Previous month</span>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+								<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+							</svg>
+						</button>
+						<button
+							onClick={nextMonth}
+							type="button"
+							className={`-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 ${maxDate > firstDayCurrentWeek ? "text-plantation-500" : "text-plantation-900"} ${maxDate > firstDayCurrentWeek && "hover:text-plantation-400"}`}>
+							<span className="sr-only">Next month</span>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+								<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+							</svg>
+						</button>
+					</div>
 				</div>
 				<div className="grid grid-cols-7 mt-2 text-sm">
 					{days.map((day) => (

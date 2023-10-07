@@ -32,34 +32,34 @@ export default function Carousel() {
 	}, []);
 
 	return (
-		<div class="gallery swiper-container select-none">
-			<div class="swiper-wrapper cursor-grab">
+		<div className="gallery swiper-container select-none">
+			<div className="swiper-wrapper cursor-grab">
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image01.src} alt="Icon 01" />
+					<img className="rounded-2xl" src={Image01.src} alt="Image 01" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image02.src} alt="Icon 02" />
+					<img className="rounded-2xl" src={Image02.src} alt="Image 02" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image03.src} alt="Icon 03" />
+					<img className="rounded-2xl" src={Image03.src} alt="Image 03" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image04.src} alt="Icon 01" />
+					<img className="rounded-2xl" src={Image04.src} alt="Image 01" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image05.src} alt="Icon 02" />
+					<img className="rounded-2xl" src={Image05.src} alt="Image 02" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image06.src} alt="Icon 03" />
+					<img className="rounded-2xl" src={Image06.src} alt="Image 03" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image07.src} alt="Icon 03" />
+					<img className="rounded-2xl" src={Image07.src} alt="Image 03" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image08.src} alt="Icon 03" />
+					<img className="rounded-2xl" src={Image08.src} alt="Image 03" />
 				</div>
 				<div className="swiper-slide">
-					<img class="rounded-2xl" src={Image06.src} alt="Icon 03" />
+					<img className="rounded-2xl" src={Image06.src} alt="Image 03" />
 				</div>
 			</div>
 		</div>
