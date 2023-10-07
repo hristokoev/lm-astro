@@ -32,7 +32,7 @@ export default function ToCity({ index }) {
 					placeholder="City and/or address"
 					autoComplete="off"
 				/>
-				{errors.toCity && <p className="text-sm text-hot-pink-500">{errors.toCity.message}</p>}
+				{errors.toCity && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.toCity.message}</p>}
 			</div>
 			<FormButtons index={index} />
 		</form>

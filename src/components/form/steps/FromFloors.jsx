@@ -40,7 +40,7 @@ export default function FromFloors({ index }) {
 					defaultValue={formData.value.fromFloors}
 					autoComplete="off"
 				/>
-				{errors.fromFloors && <p className="text-sm text-hot-pink-500">{errors.fromFloors.message}</p>}
+				{errors.fromFloors && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.fromFloors.message}</p>}
 			</div>
 			<div className="flex items-center mb-2">
 				<label htmlFor="fromElevator" className="text-center font-medium cursor-pointer select-none">Is there an elevator?</label>

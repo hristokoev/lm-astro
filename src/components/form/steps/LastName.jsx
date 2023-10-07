@@ -34,7 +34,7 @@ export default function LastName({ index }) {
 				placeholder="Halpert"
 				autoComplete="off"
 			/>
-			{errors.lastName && <p className="text-sm text-hot-pink-500">{errors.lastName.message}</p>}
+			{errors.lastName && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.lastName.message}</p>}
 		</div>
 		<FormButtons index={index} />
 	</form>

@@ -40,7 +40,7 @@ export default function ToFloors({ index }) {
 					defaultValue={formData.value.toFloors}
 					autoComplete="off"
 				/>
-				{errors.toFloors && <p className="text-sm text-hot-pink-500">{errors.toFloors.message}</p>}
+				{errors.toFloors && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.toFloors.message}</p>}
 			</div>
 			<div className="flex items-center mb-2">
 				<label htmlFor="toElevator" className="text-center font-medium cursor-pointer select-none">Is there an elevator?</label>

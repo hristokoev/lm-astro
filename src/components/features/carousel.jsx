@@ -50,7 +50,7 @@ export default function Carousel() {
 					<img className="mb-3 select-none" src={FeaturesIcon03.src} width="56" height="56" alt="Icon 03" />
 					<div className="grow">
 						<div className="font-hkgrotesk font-bold text-xl text-white">Packing</div>
-						<div className="text-slate-100 mb-3">Packing and unpacking household items into moving boxes and containers.</div>
+						<div className="text-slate-100 mb-3">Packing and unpacking household items into moving boxes.</div>
 					</div>
 				</div>
 			</div>

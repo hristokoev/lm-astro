@@ -30,7 +30,7 @@ export default function Phone({ index }) {
 				placeholder="06-12345678"
 				autoComplete="off"
 			/>
-			{errors.phoneNumber && <p className="text-sm text-hot-pink-500">{errors.phoneNumber.message}</p>}
+			{errors.phoneNumber && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.phoneNumber.message}</p>}
 		</div>
 		<FormButtons index={index} />
 	</form>

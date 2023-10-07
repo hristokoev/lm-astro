@@ -45,7 +45,7 @@ export default function Email({ index }) {
 				placeholder="jimhalpert@gmail.com"
 				autoComplete="off"
 			/>
-			{errors.email && <p className="text-sm text-hot-pink-500">{errors.email.message}</p>}
+			{errors.email && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.email.message}</p>}
 		</div>
 		<FormButtons index={index} loading={loading} />
 	</form>

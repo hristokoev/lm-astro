@@ -2,7 +2,7 @@ import { formPrev } from "./store"
 
 export default function FormButtons({ index, loading }) {
 	return (
-		<div className="max-w-xs mx-auto sm:max-w-none sm:inline-flex sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4 select-none">
+		<div className="max-w-xs flex flex-col-reverse sm:flex-row mx-auto sm:max-w-none sm:inline-flex sm:justify-center gap-y-4 sm:gap-y-0 sm:gap-x-4 select-none">
 			{index > 0 && (
 				<div>
 					<button className="btn text-slate-700 bg-white hover:bg-slate-100 w-full group" type="button" onClick={() => formPrev(index)}>
