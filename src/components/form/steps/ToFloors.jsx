@@ -39,6 +39,7 @@ export default function ToFloors({ index }) {
 					className={`form-input p-6 md:min-w-[360px] text-center text-xl ${errors.toFloors ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
 					defaultValue={formData.value.toFloors}
 					autoComplete="off"
+					autoFocus="on"
 				/>
 				{errors.toFloors && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.toFloors.message}</p>}
 			</div>

@@ -33,6 +33,7 @@ export default function FirstName({ index }) {
 				className={`form-input p-6 md:min-w-[360px] text-center text-xl ${errors.firstName ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
 				placeholder="Jim"
 				autoComplete="off"
+				autoFocus="on"
 			/>
 			{errors.firstName && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.firstName.message}</p>}
 		</div>

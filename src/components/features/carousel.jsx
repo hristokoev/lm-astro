@@ -11,10 +11,10 @@ export default function Carousel() {
 		new Swiper('.carousel', {
 			breakpoints: {
 				320: {
-					slidesPerView: 1,
+					slidesPerView: 1.25,
 				},
 				640: {
-					slidesPerView: 2,
+					slidesPerView: 2.5,
 				},
 				1024: {
 					slidesPerView: 3,

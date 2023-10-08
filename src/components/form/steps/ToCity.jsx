@@ -31,6 +31,7 @@ export default function ToCity({ index }) {
 					className={`form-input p-6 md:min-w-[360px] text-center text-xl ${errors.toCity ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
 					placeholder="City and/or address"
 					autoComplete="off"
+					autoFocus="on"
 				/>
 				{errors.toCity && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.toCity.message}</p>}
 			</div>

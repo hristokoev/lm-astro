@@ -29,6 +29,7 @@ export default function Phone({ index }) {
 				className={`form-input p-6 md:min-w-[360px] text-center text-xl ${errors.phoneNumber ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
 				placeholder="06-12345678"
 				autoComplete="off"
+				autoFocus="on"
 			/>
 			{errors.phoneNumber && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.phoneNumber.message}</p>}
 		</div>

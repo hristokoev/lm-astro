@@ -44,6 +44,7 @@ export default function Email({ index }) {
 				className={`form-input p-6 md:min-w-[360px] text-center text-xl ${errors.email ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
 				placeholder="jimhalpert@gmail.com"
 				autoComplete="off"
+				autoFocus="on"
 			/>
 			{errors.email && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.email.message}</p>}
 		</div>

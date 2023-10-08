@@ -24,7 +24,7 @@ export default function Carousel() {
 					slidesPerView: 3.5,
 				},
 			},
-			initialSlide: 0,
+			initialSlide: 1,
 			spaceBetween: 12,
 			simulateTouch: true,
 		});

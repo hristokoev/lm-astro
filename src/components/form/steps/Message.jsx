@@ -28,6 +28,7 @@ export default function Message({ index }) {
 					}
 					className={`form-textarea p-3 sm:min-w-[420px] text-xl rounded-xl ${errors.message ? "border-hot-pink-500 focus:border-hot-pink-500" : "border-aquamarine-500 focus:border-aquamarine-500"}`}
 					placeholder="Share your idea here..."
+					autoFocus="on"
 				/>
 				{errors.message && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.message.message}</p>}
 			</div>

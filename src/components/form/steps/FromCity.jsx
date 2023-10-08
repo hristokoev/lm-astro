@@ -16,7 +16,7 @@ export default function FromCity({ index }) {
 	return (
 		<form className="flex flex-col justify-center md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
 			<p className="text-xl text-slate-700 font-semibold">
-				Where would you like to move from?
+				Where would you like to move from? 😊
 			</p>
 			<div className="relative select-none">
 				<input
