@@ -35,7 +35,7 @@ export default function FirstName({ index }) {
 				autoComplete="off"
 				autoFocus="on"
 			/>
-			{errors.firstName && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.firstName.message}</p>}
+			{errors.firstName && <div className="flex w-full justify-center"><p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold max-w-[240px]">{errors.firstName.message}</p></div>}
 		</div>
 		<FormButtons index={index} />
 	</form>

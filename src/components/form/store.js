@@ -4,12 +4,12 @@ export const formIndex = atom(0)
 
 export const formData = atom({
 	fromCity: "",
-	rooms: "1 Bedroom",
-	fromType: "Flat",
+	rooms: "",
+	fromType: "",
 	fromFloors: "",
 	fromElevator: false,
 	toCity: "",
-	toType: "Flat",
+	toType: "",
 	toFloors: "",
 	toElevator: false,
 	when: "",

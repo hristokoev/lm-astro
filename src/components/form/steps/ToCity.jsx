@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { formData, formDataAdd, formNext } from "../store";
+import { formData, formDataAdd, formNext, formJump } from "../store";
 import FormButtons from "../FormButtons";
 
 export default function ToCity({ index }) {
@@ -10,7 +10,11 @@ export default function ToCity({ index }) {
 
 	const onSubmit = (data) => {
 		formDataAdd("toCity", data.toCity)
-		formNext(index)
+		if (formData.value.rooms === "Office") {
+			formJump(6)
+		} else {
+			formNext(index)
+		}
 	}
 
 	return (
@@ -33,7 +37,7 @@ export default function ToCity({ index }) {
 					autoComplete="off"
 					autoFocus="on"
 				/>
-				{errors.toCity && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.toCity.message}</p>}
+				{errors.toCity && <div className="flex w-full justify-center"><p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold max-w-[240px]">{errors.toCity.message}</p></div>}
 			</div>
 			<FormButtons index={index} />
 		</form>

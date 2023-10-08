@@ -30,7 +30,7 @@ export default function Message({ index }) {
 					placeholder="Share your idea here..."
 					autoFocus="on"
 				/>
-				{errors.message && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.message.message}</p>}
+				{errors.message && <p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold mx-auto max-w-[240px]">{errors.message.message}</p>}
 			</div>
 			<FormButtons index={index} />
 		</form>

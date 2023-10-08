@@ -31,7 +31,7 @@ export default function Phone({ index }) {
 				autoComplete="off"
 				autoFocus="on"
 			/>
-			{errors.phoneNumber && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.phoneNumber.message}</p>}
+			{errors.phoneNumber && <div className="flex w-full justify-center"><p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold max-w-[240px]">{errors.phoneNumber.message}</p></div>}
 		</div>
 		<FormButtons index={index} />
 	</form>

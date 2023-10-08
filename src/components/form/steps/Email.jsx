@@ -46,7 +46,7 @@ export default function Email({ index }) {
 				autoComplete="off"
 				autoFocus="on"
 			/>
-			{errors.email && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.email.message}</p>}
+			{errors.email && <div className="flex w-full justify-center"><p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold max-w-[240px]">{errors.email.message}</p></div>}
 		</div>
 		<FormButtons index={index} loading={loading} />
 	</form>

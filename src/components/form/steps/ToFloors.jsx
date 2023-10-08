@@ -20,6 +20,7 @@ export default function ToFloors({ index }) {
 	return (
 		<form className="flex flex-col justify-center md:justify-between items-center gap-8 min-h-[320px] select-none" onSubmit={handleSubmit(onSubmit)}>
 			{formData.value.toType === "Flat" && <p className="text-xl text-slate-700 font-semibold">On which floor is your dream flat in <span className="font-bold underline cursor-pointer" onClick={() => formJump(4)}>{formData.value.toCity}</span>?</p>}
+			{formData.value.rooms === "Office" && <p className="text-xl text-slate-700 font-semibold">On which floor will be your new office in <span className="font-bold underline cursor-pointer" onClick={() => formJump(4)}>{formData.value.toCity}</span>?</p>}
 			{formData.value.toType === "House" && <p className="text-xl text-slate-700 font-semibold">How many floors does your dream house have in <span className="font-bold underline cursor-pointer" onClick={() => formJump(4)}>{formData.value.toCity}</span>?</p>}
 			<div className="relative select-none">
 				<input
@@ -41,7 +42,7 @@ export default function ToFloors({ index }) {
 					autoComplete="off"
 					autoFocus="on"
 				/>
-				{errors.toFloors && <p className="text-sm text-hot-pink-500 mx-auto max-w-[300px]">{errors.toFloors.message}</p>}
+				{errors.toFloors && <div className="flex w-full justify-center"><p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold max-w-[260px]">{errors.toFloors.message}</p></div>}
 			</div>
 			<div className="flex items-center mb-2">
 				<label htmlFor="toElevator" className="text-center font-medium cursor-pointer select-none">Is there an elevator?</label>

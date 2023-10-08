@@ -25,13 +25,14 @@ export default function FromType({ index }) {
 			<p className="text-xl text-slate-700 font-semibold">
 				What's the type of your current property in <span className="font-bold underline cursor-pointer" onClick={() => formJump(0)}>{formData.value.fromCity}</span>?
 			</p>
+			<div>
 			<div className="px-4 min-w-[360px] grid sm:grid-cols-2 sm:gap-x-4 sm:gap-y-6 gap-4 select-none">
 				<div className={`border rounded-3xl ${fromType == "Flat" ? "bg-white" : "hover:bg-white/30"} border-slate-800`}>
 					<label htmlFor="fromTypeFlat" className={`block sm:px-8 sm:py-6 p-4 font-medium rounded-3xl cursor-pointer transition-all duration-150`}>Flat</label>
 					<input
 						id="fromTypeFlat"
 						type="radio"
-						{...register("fromType", { required: "Please select a type of property" })}
+						{...register("fromType", { required: "Please select an option." })}
 						value="Flat"
 						className="hidden"
 						onClick={handleChange}
@@ -42,12 +43,14 @@ export default function FromType({ index }) {
 					<input
 						id="fromTypeHouse"
 						type="radio"
-						{...register("fromType", { required: "Please select a type of property" })}
+						{...register("fromType", { required: "Please select an option." })}
 						value="House"
 						className="hidden"
 						onClick={handleChange}
 					/>
 				</div>
+			</div>
+			{errors.fromType && <p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold mx-auto max-w-[240px]">{errors.fromType.message}</p>}
 			</div>
 			<FormButtons index={index} />
 		</form>

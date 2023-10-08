@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { formData, formDataAdd, formNext } from "../store";
+import { formData, formDataAdd, formNext, formJump } from "../store";
 import FormButtons from "../FormButtons";
 
 export default function Bedrooms({ index }) {
@@ -13,7 +13,11 @@ export default function Bedrooms({ index }) {
 
 	const onSubmit = (data) => {
 		formDataAdd("rooms", data.rooms)
-		formNext(index)
+		if (data.rooms == "Office") {
+			formJump(3)
+		} else {
+			formNext(index)
+		}
 	}
 
 	const handleChange = (e) => {
@@ -25,13 +29,14 @@ export default function Bedrooms({ index }) {
 			<p className="text-xl text-slate-700 font-semibold">
 				How many bedrooms? Or office(s)?
 			</p>
+			<div>
 			<div className="px-4 min-w-[360px] grid sm:grid-cols-3 sm:grid-rows-2 grid-cols-2 sm:gap-x-4 sm:gap-y-4 gap-4 select-none">
 				<div className={`border rounded-3xl ${rooms == "1 Bedroom" ? "bg-white" : "hover:bg-white/30"} border-slate-800`}>
 					<label htmlFor="form1Bedroom" className={`block sm:px-8 sm:py-6 p-4 font-medium rounded-3xl cursor-pointer transition-all duration-150`}>1 Bedroom</label>
 					<input
 						id="form1Bedroom"
 						type="radio"
-						{...register("rooms", { required: "Please select a number of bedrooms" })}
+						{...register("rooms", { required: "Please select an option." })}
 						value="1 Bedroom"
 						className="hidden"
 						onClick={handleChange}
@@ -42,7 +47,7 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form2Bedrooms"
 						type="radio"
-						{...register("rooms", { required: "Please select a number of bedrooms" })}
+						{...register("rooms", { required: "Please select an option." })}
 						value="2 Bedrooms"
 						className="hidden"
 						onClick={handleChange}
@@ -53,7 +58,7 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form3Bedrooms"
 						type="radio"
-						{...register("rooms", { required: "Please select a number of bedrooms" })}
+						{...register("rooms", { required: "Please select an option." })}
 						value="3 Bedrooms"
 						className="hidden"
 						onClick={() => setRooms("3 Bedrooms")}
@@ -64,7 +69,7 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form4Bedrooms"
 						type="radio"
-						{...register("rooms", { required: "Please select a number of bedrooms" })}
+						{...register("rooms", { required: "Please select an option." })}
 						value="4 Bedrooms"
 						className="hidden"
 						onClick={handleChange}
@@ -75,7 +80,7 @@ export default function Bedrooms({ index }) {
 					<input
 						id="form5Bedrooms"
 						type="radio"
-						{...register("rooms", { required: "Please select a number of bedrooms" })}
+						{...register("rooms", { required: "Please select an option." })}
 						value="5+ Bedrooms"
 						className="hidden"
 						onClick={handleChange}
@@ -86,12 +91,14 @@ export default function Bedrooms({ index }) {
 					<input
 						id="formOffice"
 						type="radio"
-						{...register("rooms", { required: "Please select a number of bedrooms" })}
+						{...register("rooms", { required: "Please select an option." })}
 						value="Office"
 						className="hidden"
 						onClick={handleChange}
 					/>
 				</div>
+			</div>
+				{errors.rooms && <div className="inline-flex"><p className="mt-4 text-xs bg-hot-pink-500 px-2 py-1 rounded-lg text-white font-semibold">{errors.rooms.message}</p></div>}
 			</div>
 			<FormButtons index={index} />
 		</form>

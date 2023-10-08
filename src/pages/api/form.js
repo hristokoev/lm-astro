@@ -5,9 +5,9 @@ function convertData(data) {
 		"phone": data.phoneNumber,
 		"display_name": data.firstName,
 		"other_fields": {
-			"From" : `${data.fromCity}, Type: ${data.fromType}, Floor: ${data.fromFloors}, ${data.fromElevator ? 'With elevator' : 'Without elevator'}`,
-			"To" : `${data.toCity}, Type: ${data.toType}, Floor: ${data.toFloors}, ${data.toElevator ? 'With elevator' : 'Without elevator'}`,
-			"Bedrooms" : `${data.rooms}`,
+			"From" : `${data.fromCity}, Type: ${data.fromType === "" ? "Office" : data.fromType }, Floor: ${data.fromFloors}, ${data.fromElevator ? 'With elevator' : 'Without elevator'}`,
+			"To" : `${data.toCity}, Type: ${data.toType === "" ? "Office" : data.toType }, Floor: ${data.toFloors}, ${data.toElevator ? 'With elevator' : 'Without elevator'}`,			
+			"Bedrooms" : `${data.rooms === "Office" ? "" : data.rooms}`,
 			"When" : `${data.when}`,
 			"Message" : `${data.message}`,
 		}
