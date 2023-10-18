@@ -15,6 +15,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="sitemap" href="/sitemap.xml" />
 		<title>{title}</title>
 	</head>
 	<body class="flex flex-col min-h-screen">
@@ -142,3 +143,12 @@ const { title } = Astro.props;
 		@apply bg-aquamarine-500 text-white;
 	}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-47BHJGML35" is:inline></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-47BHJGML35');
+</script>

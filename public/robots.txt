@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /privacy-policy
+Disallow: /404
+Sitemap: https://lollipopmovers.nl/sitemap.xml
